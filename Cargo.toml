@@ -3,6 +3,7 @@ name = "corylus"
 version = "0.1.0"
 authors = ["François Mockers <mockersf@gmail.com>"]
 edition = "2018"
+license = "MIT"
 
 [dependencies]
 amethyst = "0.15.0"
