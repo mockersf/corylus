@@ -1,0 +1,18 @@
+[package]
+name = "corylus"
+version = "0.1.0"
+authors = ["François Mockers <mockersf@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+amethyst = "0.15.0"
+tracing = "0.1"
+tracing-subscriber = "0.2"
+serde = { version = "1.0", features = [ "derive" ] }
+
+
+[features]
+default = ["metal"]
+empty = ["amethyst/empty"]
+metal = ["amethyst/metal"]
+vulkan = ["amethyst/vulkan"]

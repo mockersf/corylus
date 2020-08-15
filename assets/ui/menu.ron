@@ -1,0 +1,9 @@
+#![enable(implicit_some)]
+Custom(
+    Menu(
+        button_width: 800,
+        button_height: 150,
+        button_spacing: 20.,
+        button_border: 10.
+    )
+)
