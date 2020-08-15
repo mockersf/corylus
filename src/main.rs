@@ -15,8 +15,8 @@ use amethyst::{
 use tracing::{event, Level};
 use tracing_subscriber;
 
+mod about;
 mod color_scheme;
-mod credits;
 mod events;
 mod game;
 mod menu;

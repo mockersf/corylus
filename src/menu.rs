@@ -16,7 +16,7 @@ use crate::color_scheme::{
     Color, COLOR_ACTING, COLOR_BACKGROUND, COLOR_BACKGROUND_HIGHLIGHTED, COLOR_BORDER,
     COLOR_TEXT_LIGHT,
 };
-use crate::{credits::CreditsScreen, game::Game};
+use crate::{about::AboutScreen, game::Game};
 
 const BUTTON_START: &str = "start";
 const BUTTON_LOAD: &str = "load";
@@ -41,7 +41,6 @@ fn create_button(id: &str, text: &str, width: f32, height: f32, border: f32) -> 
         children: vec![UiWidget::Button::<Menu> {
             transform: UiTransformData::default()
                 .with_size(width - border, height - border)
-                // .with_position(0., 50., 0.)
                 .with_anchor(Anchor::Middle)
                 .with_id(id),
             button: amethyst::ui::UiButtonData {
@@ -181,8 +180,8 @@ impl SimpleState for MainMenu {
                 target,
             }) => {
                 if Some(target) == self.button_about {
-                    event!(Level::INFO, "Switching to CreditsScreen!");
-                    return Trans::Switch(Box::new(CreditsScreen::default()));
+                    event!(Level::INFO, "Switching to AboutScreen!");
+                    return Trans::Switch(Box::new(AboutScreen::default()));
                 }
                 if Some(target) == self.button_start {
                     event!(Level::INFO, "Switching to Game!");

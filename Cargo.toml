@@ -9,7 +9,7 @@ amethyst = "0.15.0"
 tracing = "0.1"
 tracing-subscriber = "0.2"
 serde = { version = "1.0", features = [ "derive" ] }
-
+webbrowser = "0.5"
 
 [features]
 default = ["metal"]
