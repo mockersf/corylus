@@ -1,12 +1,12 @@
 use amethyst::{
     ecs::prelude::Entity,
-    input::{is_close_requested, is_key_down, is_mouse_button_down},
+    input::{is_close_requested, is_key_down},
     prelude::*,
     ui::{
-        Anchor, ToNativeWidget, UiCreator, UiEvent, UiEventType, UiFinder, UiImagePrefab,
-        UiTransformData, UiWidget,
+        Anchor, ToNativeWidget, UiCreator, UiEvent, UiEventType, UiFinder, UiTransformData,
+        UiWidget,
     },
-    winit::{MouseButton, VirtualKeyCode},
+    winit::VirtualKeyCode,
 };
 
 use serde::Deserialize;
