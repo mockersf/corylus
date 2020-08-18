@@ -16,12 +16,12 @@ use tracing::{event, Level};
 use tracing_subscriber;
 
 mod about;
-mod color_scheme;
 mod events;
 mod game;
 mod menu;
 mod pause;
 mod splash;
+mod ui_scheme;
 
 pub fn main() -> amethyst::Result<()> {
     let _subscriber = tracing_subscriber::fmt()

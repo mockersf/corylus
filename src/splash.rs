@@ -2,11 +2,13 @@ use amethyst::{
     ecs::prelude::Entity,
     input::{is_close_requested, is_key_down, is_mouse_button_down},
     prelude::*,
-    ui::UiCreator,
+    ui::{Anchor, UiImage, UiTransform},
     winit::{MouseButton, VirtualKeyCode},
 };
 
 use tracing::{event, instrument, Level};
+
+use crate::ui_scheme;
 
 #[derive(Default, Debug)]
 pub struct SplashScreen {
@@ -19,8 +21,19 @@ impl SimpleState for SplashScreen {
     fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
         let world = data.world;
 
-        self.ui_handle =
-            Some(world.exec(|mut creator: UiCreator<'_>| creator.create("ui/splash.ron", ())));
+        let image = UiImage::Texture(ui_scheme::load_image(world, "texture/logo.png"));
+        let transform = UiTransform::new(
+            "logo".to_string(),
+            Anchor::Middle,
+            Anchor::Middle,
+            0.,
+            0.,
+            0.,
+            250.,
+            250.,
+        );
+
+        self.ui_handle = Some(world.create_entity().with(image).with(transform).build());
     }
 
     #[instrument(skip(_data), level = "info")]

@@ -12,8 +12,8 @@ use amethyst::{
 use serde::Deserialize;
 use tracing::{event, instrument, Level};
 
-use crate::color_scheme::*;
 use crate::menu::MainMenu;
+use crate::ui_scheme::*;
 
 #[derive(Debug, Default)]
 pub struct AboutScreen {
@@ -101,7 +101,6 @@ impl SimpleState for AboutScreen {
     #[instrument(skip(data), level = "info")]
     fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
         let world = data.world;
-
         self.ui_handle = Some(
             world.exec(|mut creator: UiCreator<'_, About>| creator.create("ui/about.ron", ())),
         );
